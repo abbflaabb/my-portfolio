@@ -414,20 +414,33 @@ body {
     z-index: 2000;
     touch-action: manipulation;
     transition: transform 0.2s ease;
+
 }
-#theme-toggle:active {
-    transform: scale(0.9);
-}
+
 #theme-toggle:hover {
     background: var(--main-blue);
     color: white;
 }
+#theme-toggle:active {
+    transform: scale(0.9);
+}
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .header {
+        padding: 15px 5%;
         flex-direction: column;
         gap: 15px;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills ul {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
     }
 
     .hero {
@@ -440,6 +453,10 @@ body {
         font-size: 32px;
     }
 
+    .hero-content p {
+        margin: 20px auto;
+    }
+
     .hero-image .profile-img {
         width: 200px;
         height: 200px;
@@ -450,5 +467,9 @@ body {
         display: flex;
         flex-direction: column;
         gap: 15px;
+    }
+
+    .hero-btns .btn-primary {
+        margin-right: 0;
     }
 }
