@@ -57,6 +57,9 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .logo span { color: var(--main-blue); }
@@ -429,9 +432,19 @@ body {
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+    }
+    .nav-links ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
+    .nav-links li {
+        margin: 0;
+    }    
     .hero {
         flex-direction: column-reverse;
         text-align: center;
@@ -452,5 +465,8 @@ body {
         display: flex;
         flex-direction: column;
         gap: 15px;
+    }
+        #theme-toggle {
+        margin-top: 5px;
     }
 }
