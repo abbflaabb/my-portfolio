@@ -433,69 +433,46 @@ body {
     transform: scale(0.9);
 }
 
-/* منع المشكلة من الجذور */
+/* منع التمرير الجانبي في كل الأحوال */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    position: relative;
+    margin: 0;
+    padding: 0;
+    touch-action: pan-y; /* يمنع التكبير باللمس في بعض المتصفحات */
 }
 
-/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column !important; /* إجبار الترتيب العمودي */
-        padding: 15px 2% !important;
-        height: auto;
-        gap: 10px;
+        flex-direction: column !important; /* وضع الشعار فوق الروابط */
+        padding: 10px 5% !important;
+        align-items: center;
+        width: 100%;
     }
 
     .nav-links {
         width: 100%;
+        margin-top: 10px;
     }
 
     .nav-links ul {
         display: flex;
-        flex-wrap: wrap; /* هذا سيجعل الروابط تنزل لسطر جديد بدل التداخل */
+        flex-wrap: wrap; /* الحل السحري: الروابط ستنزل لسطر جديد إذا ضاقت الشاشة */
         justify-content: center;
-        gap: 10px;
+        gap: 8px; /* تقليل المسافة بين الروابط */
         padding: 0;
     }
 
     .nav-links li {
-        margin: 5px; /* تقليل المسافة جداً */
+        margin: 5px; /* تقليل المسافات الجانبية للروابط */
     }
 
     .nav-links a {
-        font-size: 13px; /* تصغير الخط ليتناسب مع شاشة الهاتف */
-        white-space: nowrap;
-    }
-
-    .hero {
-        flex-direction: column-reverse;
-        padding: 40px 20px;
-        text-align: center;
+        font-size: 13px; /* تصغير الخط قليلاً ليناسب الموبايل */
+        white-space: nowrap; /* منع انقسام الكلمة الواحدة */
     }
 
     .hero-content h1 {
-        font-size: 28px;
-        line-height: 1.2;
-    }
-
-    .hero-image .profile-img {
-        width: 160px; /* تصغير الصورة لتوفير مساحة */
-        height: 160px;
-        margin-bottom: 20px;
-    }
-
-    .hero-btns {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-btns .btn-primary, 
-    .hero-btns .btn-secondary {
-        margin: 0;
-        width: 100%;
+        font-size: 26px !important; /* تصغير العنوان ليناسب الشاشة */
     }
 }
