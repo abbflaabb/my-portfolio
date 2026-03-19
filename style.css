@@ -410,11 +410,19 @@ body {
     padding: 5px 10px;
     border-radius: 15px;
     cursor: pointer;
+    position: relative;
+    z-index: 2000;
+    touch-action: manipulation;
+    transition: transform 0.2s ease;
+
 }
 
 #theme-toggle:hover {
     background: var(--main-blue);
     color: white;
+}
+#theme-toggle:active {
+    transform: scale(0.9);
 }
 
 /* ================= RESPONSIVE ================= */
