@@ -442,56 +442,64 @@ html, body {
     touch-action: pan-y; /* يمنع التكبير باللمس في بعض المتصفحات */
 }
 
+/* ================= الحل النهائي الشامل للموبايل ================= */
 @media (max-width: 768px) {
-    /* 1. جعل قسم الهيرو يترتب عمودياً بشكل صحيح */
-    .hero {
-        flex-direction: column-reverse !important; /* الصورة فوق والنص تحت */
-        padding: 40px 10% !important;
-        text-align: center;
-        gap: 30px; /* مسافة بين الصورة والنص */
+    /* 1. إصلاح الهيدر (الاسم فوق والروابط تحت بانتظام) */
+    .header {
+        flex-direction: column !important; 
+        padding: 15px 0 !important;
+        height: auto !important;
+        gap: 10px !important;
     }
 
-    /* 2. إصلاح التفاف النص (Hi, I'm Abbas) */
-    .hero-content {
+    .nav-links {
         width: 100%;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-wrap: wrap; /* يسمح للروابط بالنزول لسطر جديد */
+        justify-content: center;
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* 2. إصلاح قسم الهيرو (ترتيب عمودي) */
+    .hero {
+        flex-direction: column !important; /* النص أولاً ثم الصورة أو العكس حسب رغبتك */
+        padding: 30px 5% !important;
+        text-align: center;
+        gap: 20px;
     }
 
     .hero-content h1 {
-        font-size: 32px !important;
-        line-height: 1.2;
-        margin-bottom: 15px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-        max-width: 100%;
-        margin: 0 auto 25px auto;
-    }
-
-    /* 3. إصلاح الصورة (كانت تتداخل مع النص) */
-    .hero-image {
-        display: flex;
-        justify-content: center;
-        width: 100%;
+        font-size: 28px !important;
+        white-space: normal; /* يمنع قطع الكلام */
     }
 
     .hero-image .profile-img {
-        width: 200px !important; /* حجم مناسب للموبايل */
-        height: 200px !important;
-        border-width: 5px !important; /* تقليل سمك الإطار */
+        width: 180px !important; 
+        height: 180px !important;
     }
 
-    /* 4. إصلاح الأزرار المقطوعة في أسفل الشاشة */
+    /* 3. إصلاح الأزرار المقطوعة */
     .hero-btns {
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        align-items: center;
+        width: 100%;
+        gap: 10px;
     }
 
     .hero-btns a {
-        width: 80%; /* عرض مناسب للزر */
+        width: 100% !important;
         margin: 0 !important;
-        padding: 12px !important;
     }
 }
