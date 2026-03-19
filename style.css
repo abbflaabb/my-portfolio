@@ -433,65 +433,69 @@ body {
     transform: scale(0.9);
 }
 
+/* منع المشكلة من الجذور */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden;
-        width: 100%;
+    .header {
+        flex-direction: column !important; /* إجبار الترتيب العمودي */
+        padding: 15px 2% !important;
+        height: auto;
+        gap: 10px;
     }
 
-    .header {
-        padding: 15px 5%;
-        flex-direction: column;
-        gap: 10px;
+    .nav-links {
         width: 100%;
     }
 
     .nav-links ul {
-        flex-wrap: wrap; 
+        display: flex;
+        flex-wrap: wrap; /* هذا سيجعل الروابط تنزل لسطر جديد بدل التداخل */
         justify-content: center;
-        gap: 8px; 
+        gap: 10px;
+        padding: 0;
     }
 
     .nav-links li {
-        margin: 5px 8px; 
+        margin: 5px; /* تقليل المسافة جداً */
     }
 
     .nav-links a {
-        font-size: 14px; 
-    }
-
-    .btn-talk {
-        padding: 6px 15px;
-        font-size: 14px;
+        font-size: 13px; /* تصغير الخط ليتناسب مع شاشة الهاتف */
+        white-space: nowrap;
     }
 
     .hero {
         flex-direction: column-reverse;
+        padding: 40px 20px;
         text-align: center;
-        padding: 40px 5%;
     }
 
     .hero-content h1 {
         font-size: 28px;
+        line-height: 1.2;
     }
 
     .hero-image .profile-img {
-        width: 180px;
-        height: 180px;
+        width: 160px; /* تصغير الصورة لتوفير مساحة */
+        height: 160px;
         margin-bottom: 20px;
     }
 
     .hero-btns {
         display: flex;
         flex-direction: column;
-        width: 100%;
         gap: 10px;
     }
 
     .hero-btns .btn-primary, 
     .hero-btns .btn-secondary {
-        margin-right: 0;
-        width: 100%; 
+        margin: 0;
+        width: 100%;
     }
 }
