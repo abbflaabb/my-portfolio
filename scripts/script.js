@@ -29,27 +29,32 @@ if (talkBtn) {
         }
     });
 }
-// Theme Toggle Logic
-const themeToggle = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme');
+document.addEventListener("DOMContentLoaded", function () {
 
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeToggle.textContent = currentTheme === 'light' ? '☀️' : '🌙';
-}
+    const themeToggle = document.getElementById("theme-toggle");
 
-themeToggle.addEventListener('click', () => {
-    let theme = document.documentElement.getAttribute('data-theme');
-    
-    if (theme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        themeToggle.textContent = '🌙';
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-        themeToggle.textContent = '☀️';
+    if (!themeToggle) return;
+
+    let currentTheme = localStorage.getItem("theme");
+
+    if (!currentTheme) {
+        currentTheme = "light";
     }
+
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    themeToggle.textContent = currentTheme === "light" ? "☀️" : "🌙";
+
+    themeToggle.addEventListener("click", function () {
+        let theme = document.documentElement.getAttribute("data-theme");
+
+        let newTheme = theme === "light" ? "dark" : "light";
+
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+
+        themeToggle.textContent = newTheme === "light" ? "☀️" : "🌙";
+    });
+
 });
 console.log(
     "%c Crafted with Love by Abbas Ali %c",
