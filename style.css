@@ -444,6 +444,9 @@ body {
 
     .nav-links li {
         margin: 0;
+    }
+    .nav-links {
+        display: none;
     }    
     .hero {
         flex-direction: column-reverse;
