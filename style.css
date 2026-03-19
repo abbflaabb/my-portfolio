@@ -443,36 +443,55 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .header {
-        flex-direction: column !important; /* وضع الشعار فوق الروابط */
-        padding: 10px 5% !important;
-        align-items: center;
+    /* 1. جعل قسم الهيرو يترتب عمودياً بشكل صحيح */
+    .hero {
+        flex-direction: column-reverse !important; /* الصورة فوق والنص تحت */
+        padding: 40px 10% !important;
+        text-align: center;
+        gap: 30px; /* مسافة بين الصورة والنص */
+    }
+
+    /* 2. إصلاح التفاف النص (Hi, I'm Abbas) */
+    .hero-content {
         width: 100%;
-    }
-
-    .nav-links {
-        width: 100%;
-        margin-top: 10px;
-    }
-
-    .nav-links ul {
-        display: flex;
-        flex-wrap: wrap; /* الحل السحري: الروابط ستنزل لسطر جديد إذا ضاقت الشاشة */
-        justify-content: center;
-        gap: 8px; /* تقليل المسافة بين الروابط */
-        padding: 0;
-    }
-
-    .nav-links li {
-        margin: 5px; /* تقليل المسافات الجانبية للروابط */
-    }
-
-    .nav-links a {
-        font-size: 13px; /* تصغير الخط قليلاً ليناسب الموبايل */
-        white-space: nowrap; /* منع انقسام الكلمة الواحدة */
     }
 
     .hero-content h1 {
-        font-size: 26px !important; /* تصغير العنوان ليناسب الشاشة */
+        font-size: 32px !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+        max-width: 100%;
+        margin: 0 auto 25px auto;
+    }
+
+    /* 3. إصلاح الصورة (كانت تتداخل مع النص) */
+    .hero-image {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image .profile-img {
+        width: 200px !important; /* حجم مناسب للموبايل */
+        height: 200px !important;
+        border-width: 5px !important; /* تقليل سمك الإطار */
+    }
+
+    /* 4. إصلاح الأزرار المقطوعة في أسفل الشاشة */
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .hero-btns a {
+        width: 80%; /* عرض مناسب للزر */
+        margin: 0 !important;
+        padding: 12px !important;
     }
 }
