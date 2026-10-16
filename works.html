@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>My Work | Abbas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>My Work | Abbas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="images/images.jpg">
 </head>
@@ -12,15 +11,18 @@
         <div class="logo">
             <a href="index.html">Abbas<span>.</span></a>
         </div>
-       <button id="theme-toggle" style="background:none; border:none; cursor:pointer; font-size: 20px;">🌙</button>
+            <button
+                    id="theme-toggle"
+                    type="button"
+                    aria-label="Switch color theme"
+                    title="Switch color theme"
+            >🌙</button>
         <nav class="nav-links">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#my-footer">Contact</a></li>
                 <li><a href="works.html">My Works</a></li>
-
+                <li><a href="#my-footer">Contact</a></li>
             </ul>
         </nav>
         <div class="header-section">
@@ -29,17 +31,29 @@
     </header>
 
     <section class="works-page">
-        <h2 class="section-title">Latest<span>Projects</span></h2>
-        
+        <h1 class="section-title">Latest <span>Projects</span></h1>
+
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-img">
                     <img src="images/preview1.jpg" alt="Project 1">
                 </div>
                 <div class="project-info">
-                    <h3>BedWars2023RewardsGenerator</h3>
+                    <h3>BedWars Reward Generator</h3>
                     <p>A customizable Reward Generator addon for BedWars 2023, designed to enhance gameplay with dynamic rewards.</p>
                     <a href="https://github.com/abbflaabb/BedWars2023-RewardsGentrator" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="images/lobbySystem-preview.png" alt="Project 2">
+                </div>
+                <div class="project-info">
+                    <h3>LobbySystem Plugin</h3>
+                    <p>LobbySystem is a plugin for managing Minecraft Paper server lobbies; it integrates features such as a scoreboard, double-jump, flight, spawn management, build mode, and emojis, while also providing chat protection against prohibited words via an AntiSwear system.</p>
+                </div>
+                <div class="version-info">
+                    <p>Version 1.0.0</p>
                 </div>
             </div>
         </div>
@@ -54,7 +68,7 @@
         </p>
 
         <form action="https://formspree.io/f/xaqpleld" method="POST" class="contact-form">
-            
+
             <div class="input-group">
                 <input type="email" name="email" placeholder="Your Email Address" required>
             </div>
@@ -64,6 +78,7 @@
             </div>
 
             <button type="submit" class="btn-primary">Send Message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <div class="social">

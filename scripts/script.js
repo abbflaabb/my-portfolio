@@ -56,6 +56,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+document.querySelectorAll(".contact-form").forEach(form => {
+    form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        const button = form.querySelector('button[type="submit"]');
+        const status = form.querySelector(".form-status");
+
+        button.disabled = true;
+        button.textContent = "Sending...";
+        status.textContent = "";
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error("Message could not be sent");
+            }
+
+            form.reset();
+            status.textContent = "Thanks! Your message has been sent.";
+        } catch {
+            status.textContent =
+                "Could not send your message. Please try again or email me directly.";
+        } finally {
+            button.disabled = false;
+            button.textContent = "Send Message";
+        }
+    });
+});
 console.log(
     "%c Crafted with Love by Abbas Ali %c",
     "background: #4285F4; color: #fff; padding: 5px; border-radius: 5px;",

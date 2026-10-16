@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>About me | Abbas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>About me | Abbas</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/jpg" href="images/images.jpg">
 </head>
@@ -14,15 +13,18 @@
         <div class="logo">
             <a href="index.html">Abbas<span>.</span></a>
         </div>
-       <button id="theme-toggle" style="background:none; border:none; cursor:pointer; font-size: 20px;">🌙</button>    
+        <button
+                id="theme-toggle"
+                type="button"
+                aria-label="Switch color theme"
+                title="Switch color theme"
+        >🌙</button>
         <nav class="nav-links">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#my-footer">Contact</a></li>
                 <li><a href="works.html">My Works</a></li>
-
+                <li><a href="#my-footer">Contact</a></li>
             </ul>
         </nav>
         <div class="header-section">
@@ -39,12 +41,14 @@
             </div>
             <div class="skills">
                     <h3>My Skills</h3>
-                    <ul>
-                        <li>HTML5 & CSS3</li>
-                        <li>Responsive Design</li>
-                        <li>UI/UX Basics</li>
-                        <li>JavaScript (Learning)</li>
-                    </ul>
+                <ul>
+                    <li>Java</li>
+                    <li>Paper API</li>
+                    <li>Minecraft Plugin Development</li>
+                    <li>Git & GitHub</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript — Learning</li>
+                </ul>
                 </div>
             </div>
             
@@ -58,7 +62,7 @@
                     <p>Years Learning</p>
                 </div>
             </div>
-        </div>
+
     </section>
 <footer class="footer" id="my-footer">
     <div class="footer-container">
@@ -79,6 +83,7 @@
             </div>
 
             <button type="submit" class="btn-primary">Send Message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
         </form>
 
         <div class="social">
